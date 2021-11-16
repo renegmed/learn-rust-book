@@ -1,0 +1,41 @@
+fn main() {
+    let s: String = String::from("hello world!");  // convert &str to String
+    let st: &str = &s[..]; //"Hello, world!";  // slice allows us to use the same function on both String values and &str values
+
+    let word = first_word2(&st);
+
+    //s.clear();
+
+    println!("{:?}", word);
+
+
+    let my_string_literal = "Hello world";
+    // Because string literals *are* string slices already,
+    // this works too, without the slice syntax!
+    let word = first_word2(my_string_literal);
+    println!("{:?}", word);   
+
+}
+
+fn first_word(s: &String) -> &str {  // return slice of a string
+    let bstr = s.as_bytes();
+    for (i, &c) in bstr.iter().enumerate() {
+        if c == b' ' {
+            return &s[..i]
+        } 
+    } 
+
+    return &s[..]
+}
+
+
+fn first_word2(s: &str) -> &str {  // return slice of a string
+    let bstr = s.as_bytes();
+    for (i, &c) in bstr.iter().enumerate() {
+        if c == b' ' {
+            return &s[..i]
+        } 
+    } 
+
+    return &s[..]
+}

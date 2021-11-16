@@ -1,0 +1,6 @@
+.... case sensitive: true
+Searching for to
+In file poem.txt
+++++ case sensitive: true
+Are you nobody, too?
+How dreary to be somebody!
